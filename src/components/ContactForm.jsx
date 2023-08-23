@@ -1,17 +1,20 @@
 import { useDispatch } from "react-redux";
 import { addContact } from "../redux/features/contacts/contactSlice";
-
+import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from 'uuid';
 
 const ContactForm = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const handleAddContact = e =>{
         e.preventDefault();
         const formData = e.target;
         const firstName = formData.firstName.value;
         const lastName  = formData.lastName.value;
         const status = formData.status.value;
-        const newContact ={firstName,lastName,status};
+        const newContact ={id:uuidv4(),firstName,lastName,status};
         dispatch(addContact(newContact));
+        navigate('/',{replace:true})
     }
     return (
         <form onSubmit={handleAddContact} className="w-1/2 mx-auto">
