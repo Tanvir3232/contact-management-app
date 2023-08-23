@@ -1,13 +1,17 @@
+import { useDispatch } from "react-redux";
+import { addContact } from "../redux/features/contacts/contactSlice";
 
 
 const ContactForm = () => {
+    const dispatch = useDispatch();
     const handleAddContact = e =>{
         e.preventDefault();
         const formData = e.target;
         const firstName = formData.firstName.value;
         const lastName  = formData.lastName.value;
         const status = formData.status.value;
-        console.log(firstName,lastName,status)
+        const newContact ={firstName,lastName,status};
+        dispatch(addContact(newContact));
     }
     return (
         <form onSubmit={handleAddContact} className="w-1/2 mx-auto">
