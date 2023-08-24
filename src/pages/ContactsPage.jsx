@@ -6,7 +6,6 @@ import ContactCard from "../components/ContactCard";
 
 const ContactsPage = () => {
     const contacts = useSelector((state)=>state.contactReducer.contacts);
-    console.log(contacts)
     return (
         <div>
             <div className="text-center my-5">
