@@ -43,7 +43,7 @@ const ContactEditForm = () => {
                 </div>
             </div>
             <div className=" my-5">
-                <button className="btn-success">Save</button>
+                <button className="btn-success">Save Editted Contact</button>
             </div>
         </form>
     );

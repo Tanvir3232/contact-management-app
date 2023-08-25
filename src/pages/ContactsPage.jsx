@@ -11,7 +11,7 @@ const ContactsPage = () => {
             <div className="text-center my-5">
                 <Link to='/add-contact'> <Button value='Create Contact' style="btn-success"></Button></Link>
 
-                <div className="grid md:grid-cols-3 gap-6 my-5">
+                <div className="grid md:grid-cols-3 gap-6 my-5 px-5">
                     {
                         contacts && contacts.map((contact,index)=><ContactCard key={index} contact={contact}></ContactCard>)
                     }
